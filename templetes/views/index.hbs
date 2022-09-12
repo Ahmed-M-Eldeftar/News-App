@@ -1,0 +1,35 @@
+
+    {{>header}}
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <div class="container">
+            <div class="d-flex w-100 justify-content-between" style="margin-bottom: 7px;">
+                <h5 class="mb-1 text-capitalize" id="title"></h5>
+                <span class="text-warning" id="publishedAt"></span>
+        </div>
+        <p class="mb-1 text-capitalize" id="content"></small>
+        </div>
+    </a>
+    <br>
+    {{!-- <div class="container">
+        <p id="error"></p>
+        <p id="address"></p>
+        <p id="forecast"></p>
+    </div> --}}
+    {{#each news}}
+        <div class="card container bg-light" style="width: 45rem;">
+            <div></div>
+            <img src="{{this.urlToImage}}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                {{#if isShow}}
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                {{/ if}}
+                {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+            </div>
+        </div>
+        <br>
+    {{/each}}
+
+{{>footer}}
+<script src="../js/client.js"></script>
